@@ -1,26 +1,309 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #f4f4f5;
+  color: #18181b;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 24px;
+}
+
+/* HEADER */
+
+.pageHeader {
+  margin-bottom: 30px;
+}
+
+.pageHeader h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.pageHeader p {
+  margin-top: 6px;
+  color: #71717a;
+}
+
+/* SUMMARY */
+
+.summary {
+  background: white;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 24px;
+}
+
+.summaryHeader h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.summaryPlayers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.summaryPlayer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px;
+
+  border-radius: 10px;
+  background: #f4f4f5;
+}
+
+.positive {
+  color: #16a34a;
+}
+
+.negative {
+  color: #dc2626;
+}
+
+/* PLAYERS */
+
+.playerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.playerCard {
+  background: white;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.playerCardHeader {
+  padding: 20px;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.playerCardHeader h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.balanceList {
+  padding: 0 20px;
+}
+
+/* BALANCE ROW */
+
+.balanceRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+
+  align-items: center;
+  gap: 15px;
+
+  min-height: 60px;
+
+  border-bottom: 1px solid #f4f4f5;
+}
+
+.balanceName {
+  font-size: 15px;
+}
+
+.balanceActions {
+  display: flex;
+  gap: 5px;
+}
+
+.balanceActions button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #e4e4e7;
+  border-radius: 7px;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.balanceActions button:hover {
+  background: #f4f4f5;
+}
+
+/* MODAL */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.modal {
+  width: 100%;
+  max-width: 400px;
+
+  background: white;
+  border-radius: 16px;
+
+  padding: 24px;
+}
+
+.modal h2 {
+  margin: 0;
+}
+
+.modalDescription {
+  color: #71717a;
+  margin-bottom: 25px;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.moneyInput {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d4d4d8;
+  border-radius: 9px;
+
+  padding: 0 12px;
+}
+
+.moneyInput span {
+  color: #71717a;
+}
+
+.moneyInput input {
+  width: 100%;
+  border: none;
+  outline: none;
+
+  padding: 13px 8px;
+
+  font-size: 18px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primaryButton {
+  border: none;
+  background: #18181b;
+  color: white;
+}
+
+.secondaryButton {
+  border: 1px solid #e4e4e7;
+  background: white;
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  background: #18181b;
+  color: white;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2);
+
+  z-index: 200;
+}
+
+.toastIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+  color: white;
+
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+  .summaryPlayers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .playerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .container {
+    padding: 24px 16px;
+  }
+
+  .summaryPlayers {
+    grid-template-columns: 1fr;
+  }
 }
