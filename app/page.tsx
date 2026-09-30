@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { initialGame } from "@/data/game";
+import Navbar from "./components/Navar";
 
 import type {
   Balance,
@@ -333,9 +334,9 @@ if (error) {
   // ==========================================
 
   return (
-
+   
     <main className="container">
-
+      <Navbar />
       <header className="pageHeader">
 
         <h1>
