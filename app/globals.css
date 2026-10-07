@@ -19,23 +19,7 @@ body {
     Cambia "poker-bg.png" por el nombre real
     de tu imagen.
   */
-  background-image:
-    linear-gradient(
-      to right,
-      #0a0a0a 0%,
-      rgba(10, 10, 10, 0.95) 10%,
-      rgba(92, 16, 16, 0.45) 30%,
-      rgba(139, 26, 26, 0.25) 50%,
-      rgba(92, 16, 16, 0.45) 70%,
-      rgba(10, 10, 10, 0.95) 90%,
-      #0a0a0a 100%
-    ),
-    url("/isotipo4street.webp");
-
-  background-position: center center;
-  background-size: 65% 45%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  
 }
 
 button,
@@ -524,4 +508,160 @@ input {
   .summaryPlayers {
     grid-template-columns: 1fr;
   }
+}
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbarLinks a {
+  color: #f5e6c8;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.navbarLinks a:hover {
+  color: #d4af37;
+}
+.navbarLogo {
+  color: #d4af37;
+  text-decoration: none;
+
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.calculatorContainer {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 50px 0 80px;
+}
+
+.calculatorSection {
+  margin-top: 30px;
+  padding: 24px;
+  background: rgba(10, 10, 10, 0.82);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 14px;
+}
+
+.calculatorSection h2 {
+  margin-top: 0;
+  color: #d4af37;
+}
+
+.cardSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectedCards {
+  min-height: 70px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pokerCard {
+  width: 58px;
+  height: 76px;
+  border-radius: 8px;
+  border: 2px solid #d4af37;
+  background: #f5e6c8;
+  color: #0a0a0a;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 6px;
+}
+
+.cardOption {
+  min-height: 42px;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 6px;
+  background: #151515;
+  color: #f5e6c8;
+  cursor: pointer;
+}
+
+.cardOption:hover {
+  background: #5c1010;
+  border-color: #d4af37;
+}
+
+.cardOption:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.calculatorActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.calculateButton,
+.resetButton {
+  padding: 13px 22px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calculateButton {
+  background: #d4af37;
+  color: #0a0a0a;
+}
+
+.calculateButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.resetButton {
+  background: #5c1010;
+  color: #f5e6c8;
+}
+
+.equityResult {
+  margin-top: 35px;
+  padding: 30px;
+  border: 1px solid #d4af37;
+  border-radius: 14px;
+  background: rgba(10, 10, 10, 0.9);
+}
+
+.equityNumbers {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.equityNumbers div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.equityNumbers span {
+  color: #aaa;
+}
+
+.equityNumbers strong {
+  color: #d4af37;
+  font-size: 36px;
 }
